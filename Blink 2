@@ -1,0 +1,48 @@
+int primero;
+int segundo;
+int tercero;
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  Serial.begin(9600);
+  Serial.println("Cuanto Tiempo en primer led?");
+  while(Serial.available() == 0){
+
+   
+  }
+  primero = Serial.parseInt();
+  
+  Serial.println("Cuanto Tiempo en segundo led?");
+  delay(5000);
+  while(Serial.available() == 0){
+
+   
+  }
+  segundo = Serial.parseInt();
+  Serial.println("Cuanto Tiempo en tercer led?");
+  delay(5000);
+  while(Serial.available() == 0){
+
+   
+  }
+  tercero = Serial.parseInt();
+  
+  pinMode(13, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(9, OUTPUT);
+}  
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(primero);                       // wait for a second
+  digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
+  delay(primero);  
+  digitalWrite(11, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(segundo);                       // wait for a second
+  digitalWrite(11, LOW);    // turn the LED off by making the voltage LOW
+  delay(segundo);  
+    digitalWrite(9, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(tercero);                       // wait for a second
+  digitalWrite(9, LOW);    // turn the LED off by making the voltage LOW
+  delay(tercero);  // wait for a second
+}
